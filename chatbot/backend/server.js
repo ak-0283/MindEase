@@ -1,54 +1,39 @@
 const express = require('express');
-const path = require('path');
-const axios = require('axios');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
+const { OpenAI } = require('openai');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 5000;
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
-// Serve the main HTML file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend'));
+// ✅ Initialize OpenAI (v4+ way)
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Chat API endpoint
 app.post('/api/chat', async (req, res) => {
-  try {
-    const { message } = req.body;
+    const userMessage = req.body.message;
 
-    if (!message) {
-      return res.status(400).json({ error: 'Message is required' });
+    try {
+        const chatCompletion = await openai.chat.completions.create({
+            model: 'gpt-3.5-turbo',
+            messages: [{ role: 'user', content: userMessage }],
+        });
+
+        const reply = chatCompletion.choices[0].message.content;
+        res.json({ reply });
+    } catch (error) {
+        console.error('❌ OpenAI API Error:', error);
+        res.status(500).json({
+            error: 'Failed to get response',
+            details: error,
+        });
     }
-
-    const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        contents: [{ parts: [{ text: message }] }],
-      },
-      {
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
-
-    const botReply = response.data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn't understand that.";
-    res.json({ reply: botReply });
-
-  } catch (error) {
-    console.error('Error calling Gemini API:', error.response?.data || error.message);
-    res.status(500).json({
-      error: 'Failed to get response',
-      details: error.response?.data || error.message,
-    });
-  }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`🚀 Server is running at http://localhost:${port}`);
 });
