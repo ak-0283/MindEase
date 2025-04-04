@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,7 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the main HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend'));
+    // res.send('Backend is working!');
+  res.sendFile(path.join(__dirname, '../frontend/chatbot.js'));
 });
 
 // Chat API endpoint
@@ -27,7 +28,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         contents: [{ parts: [{ text: message }] }],
       },
