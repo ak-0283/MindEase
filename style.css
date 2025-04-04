@@ -1,0 +1,12 @@
+:root {
+    body {
+      color-scheme: light;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Nunito, Inter, system-ui, sans-serif;
+  }
+  body {
+    font-family: Rubik, Inter, system-ui, sans-serif;
+  }
