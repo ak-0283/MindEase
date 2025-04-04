@@ -23,11 +23,7 @@ function setTheme(themeName) {
 // Theme toggle event listener
 themeToggle.addEventListener('click', () => {
     const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'light') {
-        setTheme('dark');
-    } else {
-        setTheme('light');
-    }
+    setTheme(currentTheme === 'light' ? 'dark' : 'light');
 });
 
 // Toggle chat visibility
@@ -40,19 +36,16 @@ closeChat.addEventListener('click', () => {
     chatContainer.style.display = 'none';
 });
 
-// Send message function
+// Send message
 function sendMessage() {
     const message = chatInput.value.trim();
     if (message.length === 0) return;
 
-    // Add user message to chat
     addMessage(message, 'user');
     chatInput.value = '';
-
-    // Show typing indicator
     typingIndicator.style.display = 'flex';
 
-    // Make API call to OpenAI
+    // Simulate bot typing delay
     setTimeout(() => {
         fetchBotResponse(message);
     }, 500);
@@ -64,14 +57,14 @@ function addMessage(message, sender) {
     messageElement.classList.add('message');
     messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
     messageElement.textContent = message;
-
     chatBody.appendChild(messageElement);
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
+// Fetch bot response
 async function fetchBotResponse(message) {
     try {
-        const response = await fetch('http://localhost:5000/api/chat', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,17 +76,17 @@ async function fetchBotResponse(message) {
         typingIndicator.style.display = 'none';
 
         if (data.reply) {
-            addMessage(data.reply, 'bot'); // show the bot reply in the chat
+            addMessage(data.reply, 'bot');
         } else {
-            addMessage("Sorry, I didn't get a response.", 'bot');
+            console.warn('⚠️ No reply field in response:', data);
+            addMessage("Sorry, I didn't get a response from the bot.", 'bot');
         }
     } catch (error) {
-        console.error('Fetch error:', error);
         typingIndicator.style.display = 'none';
-        addMessage("I'm having trouble connecting right now. Please try again later.", 'bot');
+        console.error('🚨 Fetch error:', error);
+        addMessage("⚠️ I'm having trouble connecting. Check console for details.", 'bot');
     }
 }
-
 
 // Event listeners
 sendButton.addEventListener('click', sendMessage);
@@ -104,7 +97,7 @@ chatInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Custom animation for the chatbot button
+// Chatbot animation
 setInterval(() => {
     const circles = document.querySelectorAll('.chatbot-icon .circle');
     circles.forEach(circle => {
