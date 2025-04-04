@@ -7,9 +7,11 @@
     <meta name="theme-color" content="#ffffff">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="">
-      
+    <link rel="shortcut icon" href="brain.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <title>MindEase - Interactive Mental Health Tools for Self-Care & Wellness</title>
     <!-- SEO Description -->
@@ -93,28 +95,26 @@
 
 
 <div id="root">
-  <header id="header" class="bg-white shadow-md">
-    <nav class="container mx-auto px-4 py-4">
+  <header id="header" class="bg-white shadow-md h-20">
+    <nav class="container mx-auto px-4 py-5">
       <div class="flex justify-between items-center">
         <!-- Logo -->
-        <a href="#" class="text-2xl font-bold text-teal-600">MindEase</a>
-        
+         <div class="logo">
+          <div class="logoimg">
+            <img src="brain.png" alt="logo">
+          </div>
+        <a href="#" class="text-3xl font-bold text-teal-600">MindEase</a>
+      </div>
         <!-- Desktop Navigation -->
         <ul class="hidden md:flex space-x-6">
-          <li><a href="#" class="text-gray-700 hover:text-teal-600 transition-colors">Home</a></li>
-          <li><a href="#blog" class="text-gray-700 hover:text-teal-600 transition-colors">Blog</a></li>
-          <li><a href="#mood-tracker" class="text-gray-700 hover:text-teal-600 transition-colors">Mood Tracker</a></li>
-          <li><a href="#journal" class="text-gray-700 hover:text-teal-600 transition-colors">Journal</a></li>
-          <li><a href="#helpline" class="text-gray-700 hover:text-teal-600 transition-colors">Helpline</a></li>
-          <li><a href="#resources" class="text-gray-700 hover:text-teal-600 transition-colors">Resources</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Home</a></li>
+          <li><a href="#blog" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Blog</a></li>
+          <li><a href="#mood-tracker" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Mood Tracker</a></li>
+          <li><a href="#journal" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Journal</a></li>
+          <li><a href="#helpline" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Helpline</a></li>
+          <li><a href="#resources" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Resources</a></li>
         </ul>
         
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="hidden md:block p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors" aria-label="Toggle dark mode">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-          </svg>
-        </button>
         
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none" aria-label="Open menu">
@@ -133,16 +133,6 @@
           <li><a href="#journal" class="block text-gray-700 hover:text-teal-600 transition-colors">Journal</a></li>
           <li><a href="#helpline" class="block text-gray-700 hover:text-teal-600 transition-colors">Helpline</a></li>
           <li><a href="#resources" class="block text-gray-700 hover:text-teal-600 transition-colors">Resources</a></li>
-          
-          <!-- Mobile Theme Toggle -->
-          <li class="pt-2">
-            <button id="mobile-theme-toggle" class="flex items-center text-gray-700 hover:text-teal-600 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-              </svg>
-              Toggle dark mode
-            </button>
-          </li>
         </ul>
       </div>
     </nav>
@@ -158,18 +148,18 @@
       <div class="flex flex-col-reverse lg:flex-row items-center justify-between">
         <!-- Hero Content -->
         <div class="lg:w-1/2 mt-10 lg:mt-0">
-          <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-4">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-4 ">
             Find Your Balance With MindEase
           </h1>
-          <p class="text-lg text-gray-600 mb-8">
+          <p class="text-2xl text-gray-600 mb-8">
             Tools for mental wellness, self-care practices, and emotional balance, 
             all in one place to support your journey to well-being.
           </p>
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="#mood-tracker" class="bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-lg text-center transition-colors">
+            <a href="#mood-tracker" class="bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-lg text-center font-bold text-xl pt-4 transition-colors">
               Track Your Mood
             </a>
-            <a href="#resources" class="bg-white hover:bg-gray-100 text-teal-600 border border-teal-500 py-3 px-6 rounded-lg text-center transition-colors">
+            <a href="#resources" class="bg-white hover:bg-gray-100 text-teal-600 border border-teal-500 py-3 px-6 pt-4 rounded-lg text-center transition-colors font-bold text-xl">
               Explore Resources
             </a>
           </div>
@@ -182,7 +172,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span class="text-gray-700">Evidence-based</span>
+              <span class="text-gray-700 text-xl">Evidence-based</span>
             </div>
             <div class="flex items-center">
               <div class="bg-teal-100 p-3 rounded-full mr-3">
@@ -190,7 +180,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <span class="text-gray-700">Private & Secure</span>
+              <span class="text-gray-700 text-xl">Private & Secure</span>
             </div>
             <div class="flex items-center">
               <div class="bg-teal-100 p-3 rounded-full mr-3">
@@ -198,7 +188,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span class="text-gray-700">Simple Daily Routines</span>
+              <span class="text-gray-700 text-xl">Daily Routines</span>
             </div>
           </div>
         </div>
@@ -206,9 +196,9 @@
         <!-- Hero Image -->
         <div class="lg:w-2/5">
           <img 
-            src="mental-health-illustration.jpg" 
+            src="pngtree-brain-mode-and-mental-health-png-image_14879169.png" 
             alt="A person practicing mindfulness with a calm, peaceful expression" 
-            class="rounded-lg shadow-lg"
+            class="rounded-lg shadow-xl border-4 border-solid border-teal-400 p-4"
             onerror="this.onerror=null; this.src='https://placehold.co/600x500/teal/white?text=MindEase'"
             width="600"
             height="500">
@@ -228,23 +218,23 @@
 </div>
 
 </element><element id="624696be-b056-499f-8022-fbfc62530a73" data-section-id="624696be-b056-499f-8022-fbfc62530a73">
-
+<!-- Features -->
 <div id="root">
   <section id="features" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Features to Support Your Mental Wellness</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">MindEase offers practical tools designed to improve your mental health and develop healthy daily habits.</p>
+        <p class="text-gray-600 max-w-2xl mx-auto text-xl">MindEase offers practical tools designed to improve your mental health and develop healthy daily habits.</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Mood Tracker Feature -->
         <div class="bg-teal-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
           <div class="bg-teal-100 p-3 inline-block rounded-full mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
+          <!-- Mood Tracker -->
           <h3 class="text-xl font-semibold text-gray-800 mb-2">Mood Tracker</h3>
           <p class="text-gray-600">Track your moods daily to identify patterns and triggers that affect your emotional wellbeing.</p>
           <a href="#mood-tracker" class="inline-block mt-4 text-teal-600 hover:text-teal-700 font-medium">
@@ -295,71 +285,7 @@
         </div>
       </div>
       
-      <!-- Interactive Demo Section -->
-      <div class="mt-20 bg-teal-50 rounded-xl p-8 shadow-md">
-        <div class="flex flex-col lg:flex-row items-center gap-8">
-          <div class="lg:w-1/2">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Try Our Interactive Mood Check</h3>
-            <p class="text-gray-600 mb-6">Take a quick 30-second mood assessment to get personalized recommendations for your current emotional state.</p>
-            <div class="flex items-center space-x-4 mb-4">
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-600 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-gray-700">Quick assessment</span>
-              </div>
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-600 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-gray-700">Personalized tips</span>
-              </div>
-            </div>
-            <button id="start-assessment" class="bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-lg transition-colors">
-              Start Quick Assessment
-            </button>
-          </div>
-          <div class="lg:w-1/2 bg-white rounded-lg p-6 shadow-sm">
-            <div id="mood-assessment" class="text-center">
-              <h4 class="text-xl font-semibold text-gray-800 mb-4">How are you feeling today?</h4>
-              <div class="flex justify-center space-x-4 mb-6">
-                <button class="mood-btn p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <button class="mood-btn p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <button class="mood-btn p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-3 6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <button class="mood-btn p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-3 6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <button class="mood-btn p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-4.986 6.864a.75.75 0 01-.5-1.329l4-3a.75.75 0 01.9 0l4 3a.75.75 0 01-.4 1.397.75.75 0 01-.5-.068L10 12.066l-3.514 2.798a.75.75 0 01-.472.068z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-              <div id="mood-result" class="hidden rounded-lg bg-teal-50 p-4 text-left">
-                <p class="text-gray-700">Based on your selection, we recommend:</p>
-                <ul class="list-disc pl-5 mt-2 text-gray-600">
-                  <li>5-minute breathing exercise</li>
-                  <li>Writing in your journal</li>
-                  <li>Connecting with a supportive friend</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    
       </div>
     </div>
   </section>
@@ -992,50 +918,46 @@
 
       <!-- Expert Recommended Books -->
       <div class="mb-16">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Expert Recommended Books</h3>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Expert Recommended Books</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="book-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            <div class="bg-teal-50 w-32 h-40 mb-4 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+            <div class="w-32 h-40 mb-4 flex items-center justify-center">
+              <img src="Mindfullness.jpg" class="h-40 w-32"></img>
             </div>
             <h4 class="font-medium text-gray-800 text-center mb-1">Mindfulness in Plain English</h4>
-            <p class="text-sm text-gray-600 text-center mb-2">by Bhante Henepola Gunaratana</p>
-            <a href="#" class="text-teal-600 hover:text-teal-700 text-sm">View Details</a>
+            <p class="text-xs text-gray-600 text-center mb-3 italic">Bhante Henepola Gunaratana</p>
+            <p class="text-sm text-gray-600 text-center mb-2 ">A practical guide to cultivating mindfulness through simple meditation techniques.</p>
+            <button class="bg-teal-500 text-white rounded-md pt-1 pb-1 pl-3 pr-3 shadow-lg hover:bg-teal-600">Buy Now</button>
           </div>
 
           <div class="book-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            <div class="bg-teal-50 w-32 h-40 mb-4 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+            <div class="w-32 h-40 mb-4 flex items-center justify-center">
+              <img src="anxietyworry.jpg" class="h-40 w-32"></img>
             </div>
             <h4 class="font-medium text-gray-800 text-center mb-1">The Anxiety and Worry Workbook</h4>
-            <p class="text-sm text-gray-600 text-center mb-2">by David A. Clark & Aaron T. Beck</p>
-            <a href="#" class="text-teal-600 hover:text-teal-700 text-sm">View Details</a>
+            <p class="text-xs text-gray-600 text-center mb-3 italic">David A. Clark & Aaron T. Beck</p>
+            <p class="text-sm text-gray-600 text-center mb-2 ">Empowers readers to face anxious thoughts with evidence-based stratergies.</p>
+            <button class="bg-teal-500 text-white rounded-md pt-1 pb-1 pl-3 pr-3 shadow-lg hover:bg-teal-600">Buy Now</button>
           </div>
 
           <div class="book-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            <div class="bg-teal-50 w-32 h-40 mb-4 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+            <div class="w-32 h-40 mb-4 flex items-center justify-center">
+              <img src="self-compassion.jpg" class="h-40 w-32"></img>
             </div>
             <h4 class="font-medium text-gray-800 text-center mb-1">Self-Compassion</h4>
-            <p class="text-sm text-gray-600 text-center mb-2">by Kristin Neff</p>
-            <a href="#" class="text-teal-600 hover:text-teal-700 text-sm">View Details</a>
+            <p class="text-xs text-gray-600 text-center mb-3 italic">Kristin Neff</p>
+            <p class="text-sm text-gray-600 text-center mb-2 ">Encourages self-kindness and acceptance as a path to emotional healing and strength.</p>
+            <button class="bg-teal-500 text-white rounded-md pt-1 pb-1 pl-3 pr-3 shadow-lg hover:bg-teal-600">Buy Now</button>
           </div>
 
           <div class="book-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            <div class="bg-teal-50 w-32 h-40 mb-4 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+            <div class="w-32 h-40 mb-4 flex items-center justify-center">
+              <img src="happiness.jpg" class="h-40 w-32"></img>
             </div>
             <h4 class="font-medium text-gray-800 text-center mb-1">The Happiness Trap</h4>
-            <p class="text-sm text-gray-600 text-center mb-2">by Russ Harris</p>
-            <a href="#" class="text-teal-600 hover:text-teal-700 text-sm">View Details</a>
+            <p class="text-xs text-gray-600 text-center mb-3 italic">Russ Harris</p>
+            <p class="text-sm text-gray-600 text-center mb-2 ">Helps break the cycle of chasing happiness by embracing thoughts and feelings with openness.</p>
+            <button class="bg-teal-500 text-white rounded-md pt-1 pb-1 pl-3 pr-3 shadow-lg hover:bg-teal-600">Buy Now</button>
           </div>
         </div>
       </div>

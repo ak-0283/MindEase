@@ -83,7 +83,7 @@ async function fetchBotResponse(message) {
         typingIndicator.style.display = 'none';
 
         if (data.reply) {
-            addMessage(data.reply, 'bot');
+            addMessage(data.reply, 'bot'); // show the bot reply in the chat
         } else {
             addMessage("Sorry, I didn't get a response.", 'bot');
         }

@@ -10,3 +10,13 @@
   body {
     font-family: Rubik, Inter, system-ui, sans-serif;
   }
+
+  .logo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+  }
+  .logoimg img{
+    height: 40px;
+    margin-right: 10px;
+  }
