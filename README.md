@@ -85,9 +85,9 @@ MindEase is more than just a project—it's a step towards **breaking the stigma
 
 ## 👨‍💻 Developed By Our Team Members
 
-> 1. Gunjan Agarwala(https://github.com/Gunjan1621)
-> 2. Ankita Nag(https://github.com/ankita14-p)
-> 3. Nisha Kumari(https://github.com/workdotnisha)
-> 4. Abhay Kumar(https://github.com/ak-0283)
+> 1. Gunjan Agarwala (https://github.com/Gunjan1621)
+> 2. Ankita Nag (https://github.com/ankita14-p)
+> 3. Nisha Kumari (https://github.com/workdotnisha)
+> 4. Abhay Kumar (https://github.com/ak-0283)
 
 ---
