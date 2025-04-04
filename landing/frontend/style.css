@@ -10,6 +10,7 @@
   body {
     font-family: Rubik, Inter, system-ui, sans-serif;
   }
+
   .logo{
     display: flex;
     flex-direction: row;
