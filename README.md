@@ -83,7 +83,7 @@ MindEase is more than just a project—it's a step towards **breaking the stigma
 
 ---
 
-## 👨‍💻 Developed By Our Team Members
+## 👨‍💻 Our Team Members
 
 - [Team Member 1 - Gunjan Agarwala](https://github.com/Gunjan1621)
 - [Team Member 2 - Ankita Nag](https://github.com/ankita14-p)
