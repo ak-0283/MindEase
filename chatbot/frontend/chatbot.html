@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase - Mental Wellness Companion</title>
+    <link rel="stylesheet" href="./chatbot.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mind<span>Ease</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-icon">
+                        <div class="sun"></div>
+                        <div class="moon"></div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Welcome to MindEase</h1>
+        <p>Your personal mental wellness companion. Get support, track your mood, and access resources to help you maintain a balanced mind.</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+    
+    <!-- Chatbot Button -->
+    <div class="chatbot-button" id="chatbotButton">
+        <div class="chatbot-icon">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div>MindEase Assistant</div>
+            <div class="close-chat" id="closeChat">×</div>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-message">
+                Hi there! I'm your MindEase assistant. How can I help you today?
+            </div>
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+            <div class="send-button" id="sendButton">
+                &#10148;
+            </div>
+        </div>
+    </div>
+    
+   <script src="./chatbot.js"></script>
+</body>
+</html>
