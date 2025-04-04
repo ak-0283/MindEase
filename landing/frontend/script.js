@@ -177,3 +177,7 @@ scrollToTopButton.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+function openHTML() {
+  window.open('../../chatbot/frontend/chatbot.html#chatContainer', '_blank'); 
+}

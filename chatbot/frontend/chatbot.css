@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary: #4B6587;
     --secondary: #7BA9B7;
     --accent: #F0CAA3;
@@ -187,7 +187,7 @@ nav ul li a:hover {
     color: var(--light);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Chatbot Styles */
 .chatbot-button {
@@ -196,7 +196,7 @@ nav ul li a:hover {
     right: 30px;
     width: 60px;
     height: 60px;
-    background-color: var(--primary);
+    background-color: #009689;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -221,7 +221,7 @@ nav ul li a:hover {
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: var(--dark);
+    background-color: #fff;
     border-radius: 50%;
     animation: bounce 1.5s infinite ease-in-out;
 }
@@ -260,7 +260,7 @@ nav ul li a:hover {
     right: 30px;
     width: 350px;
     height: 500px;
-    background-color: var(--chat-bg);
+    background-color: #F0FDFA;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     display: none;
@@ -329,14 +329,14 @@ nav ul li a:hover {
 }
 
 .bot-message {
-    background-color: var(--chat-bot);
+    background-color: #009689;
     color: var(--chat-bot-text);
     align-self: flex-start;
     border-bottom-left-radius: 5px;
 }
 
 .user-message {
-    background-color: var(--chat-user);
+    background-color: #15cabb;
     color: var(--dark);
     align-self: flex-end;
     border-bottom-right-radius: 5px;
@@ -345,23 +345,23 @@ nav ul li a:hover {
 .chat-footer {
     padding: 15px;
     display: flex;
-    border-top: 1px solid var(--input-border);
+    border-top: 1px solid #009689;
 }
 
 .chat-input {
     flex: 1;
     padding: 10px 15px;
-    border: 1px solid var(--input-border);
+    border: 1px solid #009689;
     border-radius: 30px;
     font-size: 0.9rem;
     outline: none;
-    background-color: var(--input-bg);
-    color: var(--text);
+    background-color: #9dcac7;
+    color: #009689;
 }
 
 .send-button {
-    background-color: var(--primary);
-    color: var(--dark);
+    background-color: #009689;
+    color: #fff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -374,14 +374,14 @@ nav ul li a:hover {
 }
 
 .send-button:hover {
-    background-color: var(--accent);
+    background-color: #15cabb;
 }
 
 /* Typing indicator */
 .typing-indicator {
     display: flex;
     padding: 10px 15px;
-    background-color: var(--chat-bot);
+    background-color: #9dcac7;
     align-self: flex-start;
     border-radius: 20px;
     margin-bottom: 15px;
@@ -391,7 +391,7 @@ nav ul li a:hover {
 .typing-indicator span {
     height: 8px;
     width: 8px;
-    background-color: var(--text);
+    background-color: #009689;
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;

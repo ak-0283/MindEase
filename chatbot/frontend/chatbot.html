@@ -4,31 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindEase - Mental Wellness Companion</title>
+    <link rel="shortcut icon" href="../../landing/frontend/brain.png" type="image/x-icon">
     <link rel="stylesheet" href="./chatbot.css">
+    <link rel="stylesheet" href="../../landing/frontend/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <header>
-        <div class="logo">Mind<span>Ease</span></div>
+        <nav class="container mx-auto px-4 py-5">
+            <div class="flex justify-between items-center">
+              <!-- Logo -->
+              <div class="logo">
+                <div class="logoimg">
+                  <img src="../../landing/frontend/brain.png" alt="logo">
+                </div>
+                <a href="#" class="text-3xl font-bold text-teal-600">MindEase</a>
+              </div>
+              <!-- Desktop Navigation -->
+              <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Home</a>
+                </li>
+                <li><a href="#blog"
+                    class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Blog</a></li>
+                <li><a href="#mood-tracker"
+                    class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Mood Tracker</a>
+                </li>
+                <li><a href="#journal"
+                    class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Journal</a></li>
+                <li><a href="#helpline"
+                    class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Helpline</a></li>
+                <li><a href="#resources"
+                    class="text-gray-700 hover:text-teal-600 transition-colors font-bold text-xl">Resources</a></li>
+              </ul>
+
+
+              <!-- Mobile Menu Button -->
+              <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none" aria-label="Open menu">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                  </path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+              <ul class="flex flex-col space-y-4">
+                <li><a href="#" class="block text-gray-700 hover:text-teal-600 transition-colors">Home</a></li>
+                <li><a href="#blog" class="block text-gray-700 hover:text-teal-600 transition-colors">Blog</a></li>
+                <li><a href="#mood-tracker" class="block text-gray-700 hover:text-teal-600 transition-colors">Mood
+                    Tracker</a></li>
+                <li><a href="#journal" class="block text-gray-700 hover:text-teal-600 transition-colors">Journal</a>
+                </li>
+                <li><a href="#helpline" class="block text-gray-700 hover:text-teal-600 transition-colors">Helpline</a>
+                </li>
+                <li><a href="#resources"
+                    class="block text-gray-700 hover:text-teal-600 transition-colors">Resources</a></li>
+              </ul>
+            </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <!-- <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contact</a></li> -->
                 <li class="theme-toggle" id="themeToggle">
-                    <div class="theme-toggle-icon">
+                    <!-- <div class="theme-toggle-icon">
                         <div class="sun"></div>
                         <div class="moon"></div>
-                    </div>
+                    </div> -->
                 </li>
             </ul>
         </nav>
     </header>
     
-    <section class="hero">
-        <h1>Welcome to MindEase</h1>
-        <p>Your personal mental wellness companion. Get support, track your mood, and access resources to help you maintain a balanced mind.</p>
-        <button class="cta-button">Get Started</button>
+    <section class="hero" id="mood-tracker" class="py-16 bg-teal-50">
+            <div class="container mx-auto px-4">
+              <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Track Your Mood Journey</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Monitor your emotional well-being over time with our simple
+                  mood tracking tool. Identify patterns and gain insights into what affects your mental health.</p>
+              </div>
+  
+              <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Mood Input Section -->
+                <div class="lg:w-1/2 bg-white rounded-xl shadow-md p-8">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-6">How are you feeling today?</h3>
+  
+                  <div class="mb-6">
+                    <label for="mood-date" class="block text-gray-700 mb-2">Date</label>
+                    <input type="date" id="mood-date"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                  </div>
+  
+                  <div class="mb-6">
+                    <label class="block text-gray-700 mb-3">Select your mood</label>
+                    <div class="grid grid-cols-5 gap-3">
+                      <button
+                        class="mood-option flex flex-col items-center p-3 border-2 border-transparent hover:border-teal-500 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500 mb-1" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-gray-700">Awful</span>
+                      </button>
+                      <button
+                        class="mood-option flex flex-col items-center p-3 border-2 border-transparent hover:border-teal-500 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-orange-400 mb-1" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-gray-700">Bad</span>
+                      </button>
+                      <button
+                        class="mood-option flex flex-col items-center p-3 border-2 border-transparent hover:border-teal-500 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-400 mb-1" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-3 6a3 3 0 100-6 3 3 0 000 6z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-gray-700">Okay</span>
+                      </button>
+                      <button
+                        class="mood-option flex flex-col items-center p-3 border-2 border-transparent hover:border-teal-500 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-400 mb-1" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-gray-700">Good</span>
+                      </button>
+                      <button
+                        class="mood-option flex flex-col items-center p-3 border-2 border-transparent hover:border-teal-500 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-500 mb-1" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-gray-700">Great</span>
+                      </button>
+                    </div>
+                  </div>
+  
+                  <div class="mb-6">
+                    <label for="mood-factors" class="block text-gray-700 mb-2">What factors affected your mood
+                      today?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Sleep</button>
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Exercise</button>
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Nutrition</button>
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Stress</button>
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Social</button>
+                      <button
+                        class="factor-btn py-2 px-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors">Work</button>
+                    </div>
+                  </div>
+  
+                  <div class="mb-6">
+                    <label for="mood-notes" class="block text-gray-700 mb-2">Additional notes (optional)</label>
+                    <textarea id="mood-notes" rows="3"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="Anything else you'd like to note about your day..."></textarea>
+                  </div>
+  
+                  <button id="save-mood"
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg transition-colors">
+                    Save Today's Mood
+                  </button>
+                </div>
+  
+                <!-- Mood Visualization Section -->
+                <div class="lg:w-1/2 bg-white rounded-xl shadow-md p-8">
+                  <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Your Mood Trends</h3>
+                    <div class="flex space-x-2">
+                      <button
+                        class="period-btn py-1 px-3 bg-teal-100 text-teal-700 rounded-md hover:bg-teal-200 transition-colors">Week</button>
+                      <button
+                        class="period-btn py-1 px-3 bg-gray-100 text-gray-600 rounded-md hover:bg-gray-200 transition-colors">Month</button>
+                    </div>
+                  </div>
+  
+                  <div class="mood-chart h-64 mb-6 flex items-end justify-between">
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-32 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Mon</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-48 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Tue</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-16 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Wed</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-24 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Thu</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-40 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Fri</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-48 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Sat</p>
+                    </div>
+                    <div class="mood-day text-center w-1/7">
+                      <div class="h-56 bg-teal-400 rounded-t-lg w-8 mx-auto"></div>
+                      <p class="text-xs text-gray-500 mt-2">Sun</p>
+                    </div>
+                  </div>
+  
+                  <div class="mood-insights p-4 bg-teal-50 rounded-lg">
+                    <h4 class="font-medium text-gray-800 mb-2">Insights</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                      <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0"
+                          viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Your mood tends to improve on weekends
+                      </li>
+                      <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0"
+                          viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Exercise was frequently mentioned on your good days
+                      </li>
+                      <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0"
+                          viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Consider adding more self-care activities on Wednesdays
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Consistent mood tracking helps identify patterns in your emotional health.
+                </p>
+                <a href="#journal" class="inline-block text-teal-600 hover:text-teal-700 font-medium">
+                  Try journaling alongside your mood tracking →
+                </a>
+              </div>
+            </div>
     </section>
     
     <!-- Chatbot Button -->
